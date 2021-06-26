@@ -51,8 +51,8 @@ module.exports.getOneGame = function (request, response) {
 
         if (error) {
             console.log("Error finding the game");
-            response.status = 500;
-            response.message = err;
+            resp.status = 500;
+            resp.message = err;
         } else if (!_game) {
             resp.status = 400;
             resp.message = { "message": "Game is not found" };
@@ -82,8 +82,8 @@ module.exports.addOneGame = function (request, response) {
         };
 
         if (err) {
-            response.status = 500,
-                response.message = err
+            resp.status = 500,
+            resp.message = err
         }
 
         response.status(resp.status).json(resp.message);
