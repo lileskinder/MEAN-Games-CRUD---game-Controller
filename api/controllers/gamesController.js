@@ -16,12 +16,12 @@ module.exports.getAllGames = function (request, response) {
 
     if (count > maxCount) {
         count = maxCount;
-        res.status(400).json({ "message": "Cannot exceede the count" });
+        response.status(400).json({ "message": "Cannot exceede the count" });
     }
 
 
     if (isNaN(offset) || isNaN(count)) {
-        res.status(400).json({ "message": "offset and count should be numbers" });
+        response.status(400).json({ "message": "offset and count should be numbers" });
         return;
     }
 
